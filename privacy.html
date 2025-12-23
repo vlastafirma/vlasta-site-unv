@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Політика конфіденційності — VLASTA</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" href="img/favicon.ico" type="image/x-icon">
+    
+    <style>
+        /* --- COPY OF STYLES FROM INDEX.HTML & PD.HTML FOR CONSISTENCY --- */
+        :root {
+            --text-color: #2c2c2c;
+            --accent-green: #36395e; 
+            --active-orange: #a04935; 
+            --pink-badge: #ea7055;
+            --accent-blue: #4c5fae; 
+            --bg-gray: #f9f9f9;
+            --font-main: 'Montserrat', sans-serif;
+            --divider-color: #e0e0e0;
+        }
+
+        html { scroll-behavior: smooth; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: var(--font-main);
+            color: var(--text-color);
+            overflow-x: hidden;
+            background-color: white;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            font-weight: 300;
+        }
+
+        /* --- HEADER STYLES --- */
+        header.top-bar {
+            position: fixed; top: 0; left: 0; width: 100%; padding: 15px 50px;
+            display: flex; justify-content: space-between; align-items: center;
+            background-color: rgba(255, 255, 255, 0.98);
+            z-index: 100; box-shadow: 0 1px 15px rgba(0,0,0,0.03); backdrop-filter: blur(5px);
+        }
+        .logo img { height: 45px; width: auto; }
+        
+        .contact-btn-top {
+            text-decoration: none; color: var(--text-color); font-weight: 500;
+            text-transform: uppercase; font-size: 0.75rem; letter-spacing: 1px;
+            border: 1px solid var(--text-color); border-radius: 50px; padding: 10px 30px; transition: 0.3s;
+        }
+        .contact-btn-top:hover { background-color: var(--text-color); color: white; }
+        
+        .header-actions { display: flex; gap: 12px; align-items: center; }
+        .header-btn {
+            text-decoration: none; color: var(--text-color); font-weight: 500;
+            text-transform: uppercase; font-size: 0.75rem; letter-spacing: 1px;
+            border: 1px solid transparent; border-radius: 50px; padding: 8px 18px; transition: 0.25s; background: transparent;
+        }
+        .header-btn:hover { background-color: var(--active-orange); color: white; border-color: var(--active-orange); }
+
+        /* --- PAGE CONTENT STYLES --- */
+        .page-hero { padding: 160px 50px 60px 50px; background-color: #f4f4f4; }
+        .page-title { font-size: 2.5rem; font-weight: 600; text-transform: uppercase; letter-spacing: -1px; margin-bottom: 20px; color: #111; }
+        .breadcrumbs { font-size: 0.9rem; color: #777; margin-bottom: 10px; }
+        .breadcrumbs a { text-decoration: none; color: #333; font-weight: 500; }
+        .breadcrumbs span { margin: 0 10px; color: #ccc; }
+
+        .legal-content-section {
+            padding: 60px 50px 100px 50px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        .legal-text p {
+            font-size: 1rem;
+            line-height: 1.8;
+            margin-bottom: 20px;
+            color: #333;
+        }
+        .legal-text h2 {
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin-top: 50px;
+            margin-bottom: 25px;
+            color: var(--accent-green);
+            text-transform: uppercase;
+        }
+        .legal-text h3 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            color: #111;
+        }
+        .legal-text ul {
+            margin-bottom: 25px;
+            padding-left: 20px;
+        }
+        .legal-text li {
+            margin-bottom: 10px;
+            line-height: 1.6;
+        }
+        .legal-sub-info {
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-left: 3px solid var(--active-orange);
+            margin-bottom: 30px;
+            font-size: 0.95rem;
+        }
+
+        /* --- FOOTER STYLES --- */
+        .contact-footer { background-color: var(--accent-green); color: white; padding: 100px 50px 50px 50px; position: relative; margin-top: auto; }
+        .footer-content { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; gap: 60px; }
+        .footer-left { flex: 1; }
+        .footer-right { flex: 0.8; }
+        .footer-title { font-size: 2.2rem; font-weight: 600; text-transform: uppercase; margin-bottom: 30px; letter-spacing: -1px; }
+        .footer-sub { font-size: 1rem; margin-bottom: 50px; line-height: 1.6; opacity: 0.8; font-weight: 300; }
+        
+        .contact-form { display: flex; flex-direction: column; gap: 25px; max-width: 450px; }
+        .form-group { position: relative; }
+        .form-input { width: 100%; background: transparent; border: none; border-bottom: 1px solid rgba(255,255,255,0.2); padding: 15px 0; color: white; font-family: var(--font-main); font-size: 1rem; font-weight: 300; outline: none; transition: 0.3s; }
+        .form-input:focus { border-bottom-color: white; }
+        .form-input::placeholder { color: rgba(255,255,255,0.4); }
+        
+        .phone-input-group { display: flex; align-items: flex-end; gap: 15px; }
+        .phone-code-select { background: transparent; border: none; border-bottom: 1px solid rgba(255,255,255,0.2); color: white; padding: 15px 5px; font-family: var(--font-main); font-size: 1rem; outline: none; cursor: pointer; width: 120px; }
+        .phone-code-select option { color: #333; }
+
+        /* Checkbox Styling */
+        .services-check { margin-top: 30px; display: flex; flex-direction: column; gap: 12px; }
+        .check-container { display: block; position: relative; padding-left: 35px; margin-bottom: 12px; cursor: pointer; font-size: 0.9rem; font-weight: 300; user-select: none; opacity: 0.9; transition: 0.2s; }
+        .check-container:hover { opacity: 1; }
+        .check-container input { position: absolute; opacity: 0; cursor: pointer; height: 0; width: 0; }
+        .checkmark { position: absolute; top: 0; left: 0; height: 20px; width: 20px; border: 1px solid rgba(255,255,255,0.4); border-radius: 2px; transition: 0.2s; }
+        .check-container:hover input ~ .checkmark { background-color: rgba(255,255,255,0.05); border-color: white; }
+        .check-container input:checked ~ .checkmark { background-color: white; border-color: white; }
+        .checkmark:after { content: ""; position: absolute; display: none; }
+        .check-container input:checked ~ .checkmark:after { display: block; }
+        .check-container .checkmark:after { left: 6px; top: 2px; width: 5px; height: 10px; border: solid var(--accent-green); border-width: 0 2px 2px 0; transform: rotate(45deg); }
+
+        .submit-btn { margin-top: 30px; background-color: var(--pink-badge); border: none; color: white; padding: 20px 45px; font-size: 0.9rem; font-weight: 600; text-transform: uppercase; cursor: pointer; border-radius: 4px; transition: 0.3s; align-self: flex-start; letter-spacing: 1px; box-shadow: 0 10px 25px rgba(150, 55, 33, 0.3); }
+        .submit-btn:hover { background-color: #7a2b19; transform: translateY(-3px); }
+
+        .footer-contacts-info { margin-top: 60px; }
+        .footer-label { font-size: 0.75rem; text-transform: uppercase; opacity: 0.5; margin-bottom: 15px; letter-spacing: 1px; }
+        .footer-link { display: block; color: white; text-decoration: none; font-size: 1.2rem; margin-bottom: 25px; font-weight: 400; transition: 0.3s; }
+        .footer-socials { display: flex; gap: 20px; margin-top: 40px; }
+        .social-icon { width: 45px; height: 45px; border: 1px solid rgba(255,255,255,0.3); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 1.1rem; text-decoration: none; transition: 0.3s; }
+        .social-icon:hover { background: white; color: var(--accent-green); border-color: white; }
+
+        .footer-bottom-bar { background-color: var(--accent-green); border-top: 1px solid rgba(255,255,255,0.1); padding: 30px 50px; color: white; font-size: 0.8rem; }
+        .bottom-bar-content { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px; }
+        .footer-legal-links { display: flex; gap: 20px; flex-wrap: wrap; }
+        .legal-btn { text-decoration: none; color: rgba(255,255,255,0.7); padding: 5px 0; transition: 0.3s; font-size: 0.75rem; position: relative; }
+        .legal-btn:hover, .legal-btn.active { color: white; }
+        .legal-btn::after { content: ""; position: absolute; bottom: 0; left: 0; width: 0%; height: 1px; background-color: white; transition: 0.3s; }
+        .legal-btn:hover::after { width: 100%; }
+        .legal-btn.active::after { width: 100%; }
+
+        /* UI Helpers */
+        .zigzag-divider { width: 100%; background-repeat: repeat-x; background-position: 0 0; border: none; }
+        .zigzag-orange {
+            background-image: 
+                linear-gradient(45deg, transparent 48%, var(--active-orange) 50%, transparent 52%),
+                linear-gradient(-45deg, transparent 48%, var(--active-orange) 50%, transparent 52%);
+        }
+        .z-small { height: 8px; width: 50px; background-size: 16px 16px; margin-bottom: 15px; }
+
+        @media (max-width: 1024px) {
+            .footer-content, .bottom-bar-content { flex-direction: column; gap: 40px; }
+            .footer-right { margin-top: 30px; }
+            .page-hero { padding-top: 120px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="top-bar">
+        <div class="logo"><a href="index.html"><img src="logo/logo.png" alt="Vlasta"></a></div>
+        <nav class="header-actions">
+            <a href="tnew.html" class="header-btn">Скоро</a>
+            <a href="index.html#services" class="header-btn">Послуги</a>
+            <a href="blog.html" class="header-btn">Реально корисний блок</a>
+            <a href="#contact-form" class="contact-btn-top">Зв'язатися</a>
+        </nav>
+    </header>
+
+    <section class="page-hero">
+        <div class="breadcrumbs">
+            <a href="index.html">Головна</a> <span>/</span> Політика конфіденційності
+        </div>
+        <h1 class="page-title">Політика конфіденційності</h1>
+    </section>
+
+    <section class="legal-content-section">
+        <div class="legal-text">
+            <p style="font-size: 0.9rem; color: #777; margin-bottom: 30px; border-bottom: 1px solid #eee; padding-bottom: 20px;">Редакція від «23» грудня 2025 р.</p>
+
+            <h2>1. ЗАГАЛЬНІ ПОЛОЖЕННЯ</h2>
+            <p>1.1. Ця Політика конфіденційності та обробки персональних даних (далі – «Політика») розроблена відповідно до вимог Закону України «Про захист персональних даних» від 01.06.2010 № 2297-VI, а також інших нормативно-правових актів України, що регулюють питання захисту персональних даних.</p>
+            <p>1.2. Політика визначає порядок обробки та заходи щодо забезпечення безпеки персональних даних, які ТОВАРИСТВО З ДОДАТКОВОЮ ВІДПОВІДАЛЬНІСТЮ "ФІРМА "ВЛАСТА" (далі – «Володілець» або «Компанія») може отримати про Користувача під час використання ним веб-сайту https://vlasta.site/ (далі – «Сайт»).</p>
+            
+            <div class="legal-sub-info">
+                <strong>1.3. Відомості про Володільця персональних даних:</strong><br><br>
+                Найменування: ТДВ "ФІРМА "ВЛАСТА"<br>
+                Код ЄДРПОУ: 22348525<br>
+                Адреса: Україна, 79016, Львівська обл., місто Львів, вул. Братів Міхновських, буд. 11<br>
+                Електронна пошта: <a href="mailto:vlastafirma@gmail.com" style="color: inherit; text-decoration: underline;">vlastafirma@gmail.com</a>
+            </div>
+
+            <p>1.4. Використання Сайту Користувачем означає згоду з цією Політикою та умовами обробки персональних даних Користувача. У разі незгоди з умовами Політики Користувач повинен припинити використання Сайту.</p>
+
+            <h2>2. ПРАВОВІ ПІДСТАВИ ОБРОБКИ ПЕРСОНАЛЬНИХ ДАНИХ</h2>
+            <p>2.1. Правовими підставами обробки персональних даних є:</p>
+            <ul>
+                <li>Конституція України;</li>
+                <li>Закон України «Про захист персональних даних»;</li>
+                <li>Закон України «Про електронну комерцію»;</li>
+                <li>Згода Користувача на обробку його персональних даних (заповнення форм на Сайті).</li>
+            </ul>
+
+            <h2>3. МЕТА ЗБОРУ ТА КАТЕГОРІЇ ПЕРСОНАЛЬНИХ ДАНИХ</h2>
+            <p>3.1. Мета 1: Обробка заявок та зворотний зв'язок.<br>
+            Для надання консультацій, обробки замовлень та зв'язку з клієнтами Володілець обробляє такі дані:</p>
+            <ul>
+                <li>Прізвище, ім'я, по батькові;</li>
+                <li>Номер контактного телефону;</li>
+                <li>Адреса електронної пошти.</li>
+            </ul>
+
+            <p>3.2. Мета 2: Аналітика та покращення роботи Сайту.<br>
+            Для збору статистики та технічного аналізу (знеособлені дані):</p>
+            <ul>
+                <li>Дані файлів Cookie;</li>
+                <li>IP-адреса;</li>
+                <li>Інформація про браузер та операційну систему;</li>
+                <li>Час доступу та адреси запитуваних сторінок.</li>
+            </ul>
+            <p>3.3. Володілець не здійснює обробку спеціальних категорій персональних даних (расова приналежність, політичні погляди, біометричні дані тощо).</p>
+
+            <h2>4. ПОРЯДОК ТА УМОВИ ОБРОБКИ</h2>
+            <p>4.1. Обробка персональних даних здійснюється змішаним шляхом (автоматизована обробка та обробка без використання засобів автоматизації).</p>
+            <p>4.2. Дії з даними включають: збирання, реєстрацію, накопичення, зберігання, адаптування, зміну, поновлення, використання і поширення (розповсюдження, реалізацію, передачу), знеособлення, знищення персональних даних.</p>
+            <p>4.3. Термін зберігання персональних даних:</p>
+            <ul>
+                <li>Персональні дані зберігаються протягом терміну, необхідного для досягнення цілей їх обробки, але не більше 3 (трьох) років, якщо інше не передбачено законодавством України.</li>
+                <li>У разі відкликання згоди Користувачем дані видаляються протягом 30 днів.</li>
+            </ul>
+            <p>4.4. Передача даних третім особам не здійснюється, крім випадків, передбачених законодавством України (на запит правоохоронних органів, суду тощо).</p>
+
+            <h2>5. ЗАХИСТ ПЕРСОНАЛЬНИХ ДАНИХ</h2>
+            <p>5.1. Володілець вживає необхідних організаційних та технічних заходів для захисту персональних інформації Користувача від неправомірного або випадкового доступу, знищення, перекручення, блокування, копіювання, поширення, а також від інших неправомірних дій третіх осіб.</p>
+
+            <h2>6. ПРАВА КОРИСТУВАЧА (СУБ'ЄКТА ПЕРСОНАЛЬНИХ ДАНИХ)</h2>
+            <p>6.1. Згідно зі статтею 8 Закону України «Про захист персональних даних», Користувач має право:</p>
+            <ul>
+                <li>Знати про джерела збирання, місцезнаходження своїх даних, мету їх обробки.</li>
+                <li>Отримувати інформацію про умови надання доступу до персональних даних, зокрема інформацію про третіх осіб, яким передаються його дані.</li>
+                <li>На доступ до своїх персональних даних.</li>
+                <li>Пред’являти вмотивовану вимогу із запереченням проти обробки своїх даних.</li>
+                <li>Пред'являти вмотивовану вимогу щодо зміни або знищення своїх даних, якщо вони обробляються незаконно чи є недостовірними.</li>
+                <li>Звертатися із скаргами на обробку своїх даних до Уповноваженого Верховної Ради України з прав людини або до суду.</li>
+                <li>Відкликати згоду на обробку персональних даних.</li>
+            </ul>
+
+            <h2>7. ФАЙЛИ COOKIE</h2>
+            <p>7.1. Сайт використовує технологію «cookies» («куки») для створення статистичної звітності. «Куки» являють собою невеликий обсяг даних, що відсилається веб-сайтом, який браузер комп'ютера Користувача зберігає на жорсткому диску.</p>
+            <p>7.2. Файли cookies не містять конфіденційної інформації. Користувач може налаштувати браузер так, щоб він не приймав cookies, проте це може обмежити роботу деяких функцій Сайту.</p>
+
+            <h2>8. ЗМІНА ПОЛІТИКИ КОНФІДЕНЦІЙНОСТІ</h2>
+            <p>8.1. Володілець має право вносити зміни до цієї Політики. Нова редакція Політики набирає чинності з моменту її розміщення на Сайті, якщо інше не передбачено новою редакцією Політики.</p>
+            <p>8.2. Чинна редакція завжди знаходиться на сторінці за адресою: <a href="privacy.html" style="color: inherit; text-decoration: underline;">https://vlasta.site/privacy.html</a></p>
+
+            <h2>9. ЗВОРОТНИЙ ЗВ'ЯЗОК</h2>
+            <p>9.1. Усі пропозиції або питання щодо цієї Політики, а також запити на видалення/зміну даних Користувач може надсилати на електронну адресу: <a href="mailto:vlastafirma@gmail.com" style="color: inherit; text-decoration: underline;">vlastafirma@gmail.com</a> або поштою за адресою місцезнаходження ТДВ "ФІРМА "ВЛАСТА".</p>
+        </div>
+    </section>
+
+    <footer class="contact-footer">
+        <div class="footer-content">
+            <div class="footer-left">
+                <div class="footer-title">МИ ЗАВЖДИ НА<br>ЗВ'ЯЗКУ</div>
+                <div class="footer-sub">Якщо форму заповнювати прям зовсім ліньки, зв'яжіться з нами безпосередньо. Ми точно будемо раді :)</div>
+
+                <div class="footer-contacts-info">
+                    <div class="footer-label">ЗАТЕЛЕФОНУЙТЕ НАМ</div>
+                    <a href="tel:+380322387977" class="footer-link">+ 380 322 387 977</a>
+                    
+                    <div class="footer-sub" style="font-size: 0.8rem; margin-top: 10px; max-width: 250px;">
+                        У нас є і міський телефон, чисто заради пристойності
+                    </div>
+
+                    <div class="footer-label">АДРЕСА</div>
+                    <div class="footer-link" style="font-weight:400">Brativ Mikhnovs'kykh St, 11, Lviv, Lviv Oblast, Ukraine, 79000</div>
+                    
+                    <div class="zigzag-divider zigzag-orange z-small" style="filter: brightness(0) invert(1); opacity: 0.6;"></div>
+
+                    <div class="footer-label">НАПИШІТЬ НАМ</div>
+                    <a href="mailto:zakaz@vlasta.site" class="footer-link">zakaz@vlasta.site</a>
+                    <a href="mailto:hello@vlasta.site" class="footer-link">hello@vlasta.site</a>
+
+                    <div class="footer-socials">
+                        <a href="#" class="social-icon"><i class="fa-brands fa-telegram"></i></a>
+                        <a href="#" class="social-icon"><i class="fa-brands fa-whatsapp"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-right">
+                <div class="footer-title" style="font-size: 1.5rem; margin-bottom: 30px;">Ви можете залишити заявку за допомогою цієї чудової форми</div>
+                
+                <form id="contact-form" class="contact-form">
+                    <div class="form-group">
+                        <input type="text" placeholder="Ваше ім'я" class="form-input">
+                    </div>
+
+                    <div class="form-group">
+                        <input type="text" placeholder="Іван Іванов" class="form-input">
+                    </div>
+                    
+                    <label style="font-size: 0.8rem; margin-top: 10px; display:block; opacity: 0.7;">Контактний телефон</label>
+                    <div class="form-group phone-input-group">
+                        <select class="phone-code-select">
+                            <option value="+380">🇺🇦 +380</option>
+                            <option value="+1">🇺🇸 +1</option>
+                            <option value="+48">🇵🇱 +48</option>
+                            <option value="+33">🇫🇷 +33</option>
+                            <option value="+44">🇬🇧 +44</option>
+                            <option value="+49">🇩🇪 +49</option>
+                            <option value="+39">🇮🇹 +39</option>
+                            <option value="+34">🇪🇸 +34</option>
+                            <option value="+90">🇹🇷 +90</option>
+                            <option value="+86">🇨🇳 +86</option>
+                            <option value="+971">🇦🇪 +971</option>
+                            <option value="+7">🇰🇿 +7</option>
+                        </select>
+                        <input type="tel" placeholder="(000) 000 00 00" class="form-input">
+                    </div>
+
+                    <div class="form-group">
+                        <input type="email" placeholder="Ваш email" class="form-input">
+                    </div>
+
+                    <div class="services-check">
+                        <div style="margin-bottom: 10px; font-weight: 500;">Які послуги вас цікавлять?</div>
+                        
+                        <label class="check-container">Пошив костюмної групи
+                            <input type="checkbox">
+                            <span class="checkmark"></span>
+                        </label>
+                        <label class="check-container">Пошив трикотажної групи
+                            <input type="checkbox">
+                            <span class="checkmark"></span>
+                        </label>
+                        <label class="check-container">Трикотаж з нанесенням
+                            <input type="checkbox">
+                            <span class="checkmark"></span>
+                        </label>
+                        <label class="check-container">Послуги експериментального цеху
+                            <input type="checkbox">
+                            <span class="checkmark"></span>
+                        </label>
+                        <label class="check-container">Послуги з розкрою без пошиття
+                            <input type="checkbox">
+                            <span class="checkmark"></span>
+                        </label>
+                        <label class="check-container">У мене інший запит
+                            <input type="checkbox">
+                            <span class="checkmark"></span>
+                        </label>
+                    </div>
+
+                    <div style="margin-top: 20px;">
+                        <label class="check-container" style="font-size: 0.75rem; line-height: 1.4;">
+                            Я підтверджую ознайомлення з <a href="privacy.html" style="color: white; text-decoration: underline;">Політикою</a> і даю <a href="pd.html" style="color: white; text-decoration: underline;">згоду на обробку моїх персональних даних</a>.
+                            <input type="checkbox">
+                            <span class="checkmark"></span>
+                        </label>
+                    </div>
+
+                    <button type="submit" class="submit-btn">ВІДПРАВИТИ</button>
+                </form>
+            </div>
+        </div>
+    </footer>
+
+    <div class="footer-bottom-bar">
+        <div class="bottom-bar-content">
+            <div style="font-weight: 600; font-size: 0.9rem;">2025 Vlasta Firma</div>
+            
+            <div class="footer-legal-links">
+                <a href="#" class="legal-btn">Колегам</a>
+                <a href="privacy.html" class="legal-btn active">Політика конфіденційності</a>
+                <a href="pd.html" class="legal-btn">Згода на обробку ПД</a>
+                <a href="#" class="legal-btn">Політика використання кукі</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
