@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>СКОРО — Vlasta</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root{ --font-main: 'Montserrat', sans-serif; --accent-green: #36395e; --active-orange: #a04935; --text-color: #2c2c2c }
+        *{box-sizing:border-box;margin:0;padding:0}
+        body{font-family:var(--font-main);color:var(--text-color);display:flex;align-items:center;justify-content:center;min-height:100vh;background:#fff}
+        .container{max-width:900px;padding:40px;text-align:center}
+        h1{font-size:2rem;text-transform:uppercase;margin-bottom:20px}
+        p{font-size:1.05rem;color:#444;margin-bottom:30px}
+        .loader-wrap{display:flex;flex-direction:column;align-items:center;gap:20px}
+        .wheel{
+            width:120px;height:120px;border-radius:50%;position:relative;display:inline-block;
+            background:conic-gradient(from 0deg, var(--active-orange) 0 25%, rgba(0,0,0,0.06) 25% 100%);
+            animation:spin 1.6s linear infinite;box-shadow:0 6px 20px rgba(0,0,0,0.08);
+        }
+        .wheel::after{content:"";position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:56px;height:56px;border-radius:50%;background:white}
+        .wheel::before{content:"";position:absolute;inset:6px;border-radius:50%;box-shadow:inset 0 6px 20px rgba(255,255,255,0.08)}
+        @keyframes spin{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
+        .back-link{display:inline-block;margin-top:20px;text-decoration:none;color:var(--accent-green);font-weight:600}
+        
+        /* Lang Switcher */
+        .lang-switcher-container { position: absolute; top: 20px; right: 30px; display: flex; gap: 8px; }
+        .lang-link { text-decoration: none; color: var(--text-color); font-size: 0.8rem; font-weight: 500; opacity: 0.6; transition: 0.3s; }
+        .lang-link:hover, .lang-link.active { opacity: 1; font-weight: 700; color: var(--active-orange); }
+    </style>
+</head>
+<body>
+    <div class="lang-switcher-container">
+        <a href="en/tnew.html" class="lang-link">EN</a>
+        <a href="pl/tnew.html" class="lang-link">PL</a>
+        <a href="de/tnew.html" class="lang-link">DE</a>
+        <a href="#" class="lang-link active">UA</a>
+    </div>
+    <div class="container">
+        <h1>СКОРО ТУТ БУДЕ ЩОСЬ ДУЖЕ КРУТЕ ТА ЦІКАВЕ</h1>
+        <p>ОНОВЛЮЙТЕСЬ ЧАСТІШЕ :)</p>
+        <div class="loader-wrap">
+            <div class="wheel" aria-hidden="true"></div>
+            <div>Завантаження...</div>
+        </div>
+        <a class="back-link" href="index.html">← Назад на головну</a>
+    </div>
+</body>
+</html>
